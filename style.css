@@ -1,0 +1,23 @@
+body{
+background-color: #929174;  
+   
+}
+
+span {
+    color: #00D8FF;
+}
+
+span h1{
+    
+    border: 5px dotted purple; 
+    padding: 5px;
+    margin-right: 1150px;
+}
+
+table, th, td{
+    border: 1px solid black;
+    padding: 4px;
+    margin-left: 500px;
+    background-color: deeppink;
+    color: black;
+}
