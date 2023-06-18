@@ -6,7 +6,8 @@
 
 I like data. 
 >^^<AI systems, Image processing and NLP>^^< <br>
--> Kaggle/ https://www.kaggle.com/mertsengil
+-> Kaggle/ https://www.kaggle.com/mertsengil <br>
+web site -> https://www.kodlanabilir.com
 
 ---
 
