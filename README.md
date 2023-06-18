@@ -4,7 +4,9 @@
 
 ---
 
-Working on python
+WI like data. 
+>^^<AI systems, Image processing and NLP>^^<
+-> Kaggle/ https://www.kaggle.com/mertsengil
 
 ---
 
