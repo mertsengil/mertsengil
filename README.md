@@ -4,8 +4,8 @@
 
 ---
 
-WI like data. 
->^^<AI systems, Image processing and NLP>^^<
+I like data. 
+>^^<AI systems, Image processing and NLP>^^< <br>
 -> Kaggle/ https://www.kaggle.com/mertsengil
 
 ---
