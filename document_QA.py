@@ -62,7 +62,7 @@ def main():
             st.write('document 1 is chosen')
             query = st.text_input("Ask question: ")
             if query:
-                df="/Users/mertsengil/Desktop/ARKAS/Profit and Loss.csv"
+                df="https://raw.githubusercontent.com/mertsengil/mertsengil/main/Profit%20and%20Loss.csv"
                 response = document_QA(df,query)
                 st.write(response)
 
@@ -70,7 +70,7 @@ def main():
             st.write('document 2 is chosen')
             query = st.text_input("Ask question: ")
             if query:
-                df="/Users/mertsengil/Desktop/ARKAS/Service Based Avr SF.csv"
+                df="https://raw.githubusercontent.com/mertsengil/mertsengil/main/Service%20Based%20Avr%20SF.csv"
                 response = document_QA(df,query)
                 st.write(response)
         else:
