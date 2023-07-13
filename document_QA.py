@@ -56,13 +56,42 @@ def main():
 
     user_input = st.text_input("document: ('1' or '2')")
 
+    import requests
+    import pandas as pd
+
+    # URL of the CSV file
+    csv_url_1 = "https://raw.githubusercontent.com/mertsengil/mertsengil/main/Profit%20and%20Loss.csv"
+    
+    # Download the file and save it locally
+    response = requests.get(csv_url_1)
+    with open("file.csv", "w") as file:
+        file.write(response.text)
+    
+    # Path to the locally saved file
+    file_path_profit = "profit.csv"
+
+    #---------------------------------------------
+
+    
+    csv_url_2 = "https://raw.githubusercontent.com/mertsengil/mertsengil/main/Service%20Based%20Avr%20SF.csv"
+    
+    # Download the file and save it locally
+    response = requests.get(csv_url_2)
+    with open("file.csv", "w") as file:
+        file.write(response.text)
+    
+    # Path to the locally saved file
+    file_path_avr = "avr.csv"
+
+    
+
     if user_input:
 
         if user_input == '1':
             st.write('document 1 is chosen')
             query = st.text_input("Ask question: ")
             if query:
-                df="https://raw.githubusercontent.com/mertsengil/mertsengil/main/Profit%20and%20Loss.csv"
+                df=file_path_profit
                 response = document_QA(df,query)
                 st.write(response)
 
@@ -70,7 +99,7 @@ def main():
             st.write('document 2 is chosen')
             query = st.text_input("Ask question: ")
             if query:
-                df="https://raw.githubusercontent.com/mertsengil/mertsengil/main/Service%20Based%20Avr%20SF.csv"
+                df=file_path_avr
                 response = document_QA(df,query)
                 st.write(response)
         else:
