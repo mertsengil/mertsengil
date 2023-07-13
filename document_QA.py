@@ -7,10 +7,15 @@ from langchain.llms import OpenAI
 import os
 import streamlit as st
 from PIL import Image
+from getpass import getpass
+from langchain.document_loaders import GitHubIssuesLoader
+
+
 
 os.environ["OPENAI_API_KEY"] = "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"
 
 def document_QA(df,query):
+    ACCESS_TOKEN = getpass()
 
     loader = CSVLoader(file_path=df)
     index_creator = VectorstoreIndexCreator()
