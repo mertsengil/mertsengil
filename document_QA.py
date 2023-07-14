@@ -6,7 +6,7 @@ import os
 import streamlit as st
 from langchain.document_loaders import UnstructuredExcelLoader
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 def document_QA(df,query):
     loader = UnstructuredExcelLoader(df, mode='elements')
