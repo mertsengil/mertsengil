@@ -4,5 +4,3 @@ unstructured
 chromadb
 tiktoken
 pandas
-os
-streamlit
