@@ -1,23 +1,15 @@
 import pandas as pd
-import numpy as np
-from langchain.document_loaders import CSVLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 import os
 import streamlit as st
-from PIL import Image
-from getpass import getpass
-from langchain.document_loaders import GitHubIssuesLoader
+from langchain.document_loaders import UnstructuredExcelLoader
 
-
-
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 def document_QA(df,query):
-    ACCESS_TOKEN = getpass()
-
-    loader = CSVLoader(file_path=df)
+    loader = UnstructuredExcelLoader(df, mode='elements')
     index_creator = VectorstoreIndexCreator()
     docsearch = index_creator.from_loaders([loader])
     chain = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff",
@@ -61,15 +53,13 @@ def main():
 
     user_input = st.text_input("document: ('1' or '2')")
 
-    
-
     if user_input:
 
         if user_input == '1':
             st.write('document 1 is chosen')
             query = st.text_input("Ask question: ")
             if query:
-                df="Profit and Loss.csv"
+                df="https://raw.githubusercontent.com/mertsengil/mertsengil/main/Profit%20and%20Loss.xlsx"
                 response = document_QA(df,query)
                 st.write(response)
 
@@ -77,7 +67,7 @@ def main():
             st.write('document 2 is chosen')
             query = st.text_input("Ask question: ")
             if query:
-                df="Service Based Avr SF.csv"
+                df="https://raw.githubusercontent.com/mertsengil/mertsengil/main/Service%20Based%20Avr%20SF.xlsx"
                 response = document_QA(df,query)
                 st.write(response)
         else:
